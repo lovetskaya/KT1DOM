@@ -31,16 +31,11 @@
 </head>
 <body>
     <script>
-    // Создаем массив с 30 случайными числами от 0 до 99
     let numbers = [];
     for (let i = 0; i < 30; i++) {
       numbers.push(Math.floor(Math.random() * 100));
     }
-    
-    // Создаем таблицу 5х6
     let table = document.createElement("table");
-    
-    // Заполняем таблицу числами из массива
     for (let i = 0; i < 5; i++) {
       let row = document.createElement("tr");
       for (let j = 0; j < 6; j++) {
@@ -54,8 +49,6 @@
       }
       table.appendChild(row);
     }
-    
-    // Добавляем таблицу на страницу
     document.body.appendChild(table);
     </script>
     
@@ -63,30 +56,20 @@
     
     <script>
     function addNumber() {
-      // Генерируем случайное число от 0 до 99
       let number = Math.floor(Math.random() * 100);
-    
-      // Находим последнюю строку таблицы
       let lastRow = document.querySelector("table tr:last-child");
-    
-      // Если в последней строке уже есть 6 ячеек, создаем новую строку
       if (lastRow.children.length == 6) {
         lastRow = document.createElement("tr");
         document.querySelector("table").appendChild(lastRow);
       }
-    
-      // Создаем новую ячейку и заполняем ее сгенерированным числом
       let cell = document.createElement("td");
       cell.textContent = number;
       if (number >= 50) {
         cell.style.backgroundColor = "orange";
       }
-    
-      // Добавляем ячейку в последнюю строку таблицы
       lastRow.appendChild(cell);
     }
     </script>
-    
-    
+
 </body>
 </html>
